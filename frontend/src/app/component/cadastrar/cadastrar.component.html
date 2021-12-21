@@ -1,0 +1,27 @@
+<div class="container w-75 my-5">
+  <h3 class="text-center">Cadastro de Transferência</h3>
+
+  <div class="container w-50  my-5">
+    <div class="col">
+      <form action="">
+        <div class="mb-1">
+          <label for="nome" class="form-label">Nome</label>
+          <input [(ngModel)]="transferencia.nomeCliente" type="text" id="nome" name="nome" class="form-control">
+        </div>
+        <div class="row mb-1 mt-3">
+          <div class="col-6">
+            <label for="valor" class="form-label">Valor</label>
+            <input [(ngModel)]="transferencia.valor"  type="text" id="valor" name="valor" class="form-control">
+          </div>
+          <div class="col-6">
+            <label for="valor" class="form-label">Conta</label>
+            <input [(ngModel)]="transferencia.contaCliente"  type="text" id="valor" name="valor" class="form-control">
+          </div>
+        </div>
+        <div class="mt-5 text-center">
+          <button (click)="adicionar()" class="btn">Adicionar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

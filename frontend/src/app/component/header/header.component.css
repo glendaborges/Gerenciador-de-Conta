@@ -1,0 +1,24 @@
+.example-spacer {
+  flex: 1 1 auto;
+
+}
+button{
+  border: none;
+  background-color: #2a0845;
+
+}
+
+a{
+  text-decoration: none;
+  color: #ffff;
+
+}
+
+.navbar{
+  height: 80px;
+  background-image: linear-gradient(to left, #77A1D3, #79CBCA,#77A1D3);
+  box-shadow: -2px -2px 25px rgb(216, 209, 209);
+}
+
+
+

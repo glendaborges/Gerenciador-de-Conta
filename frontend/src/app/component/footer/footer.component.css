@@ -1,0 +1,12 @@
+
+footer {
+  color: #283593;
+  text-align: center;
+  background-image: linear-gradient(to left, #77A1D3, #79CBCA,#77A1D3);
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: -2px -2px 25px rgb(216, 209, 209);
+}
