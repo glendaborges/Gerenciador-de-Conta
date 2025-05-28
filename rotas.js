@@ -1,6 +1,6 @@
 
 const rotas = require('express').Router()
-const conexao = require('./config/conect')
+const conexao = require('../config/conect')
 
 rotas.get('/', (req, res) =>{
     let sql = 'select * from tb_transacoes'
