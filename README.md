@@ -1,5 +1,6 @@
 # 💰 Gerenciador de Conta
- API
+
+API
 
 API RESTful para gerenciamento de transações bancárias, desenvolvida com **Node.js**, **TypeScript** e **MySQL**.
 
@@ -54,45 +55,52 @@ A aplicação estará disponível em: `http://localhost:3000`
 ## 📌 Endpoints
 
 ### `GET /`
+
 Lista todas as transações.
 
 ### `GET /:id`
+
 Busca uma transação por `id_transferencia`.
 
 ### `POST /`
+
 Cria uma nova transação.
 
 **Body:**
+
 ```json
 {
   "nomeCliente": "Maria",
-  "valor": 100.00,
+  "valor": 100.0,
   "contaCliente": "123456"
 }
 ```
 
 ### `PUT /:id`
+
 Atualiza uma transação existente.
 
 **Body:**
+
 ```json
 {
   "nomeCliente": "Maria",
-  "valor": 150.00,
+  "valor": 150.0,
   "contaCliente": "123456"
 }
 ```
 
 ### `DELETE /:id`
+
 Remove uma transação por ID.
 
 ---
 
 ## ✅ To-do (Refatoração para Boas Práticas)
 
-- [ ] Separar Frontend e Backend.
+- [x] Separar Frontend e Backend. --João
 - [ ] Implementar **validação de dados** com Zod.
-- [ ] Adotar arquitetura **MVC** (separação de responsabilidades).
+- [x] Adotar arquitetura **MVC** (separação de responsabilidades). --Richardy
 - [ ] Criar **middleware de tratamento de erros**.
 - [ ] Usar **dotenv** para variáveis sensíveis.
 - [ ] Padronizar estrutura e formato das **respostas da API**.
