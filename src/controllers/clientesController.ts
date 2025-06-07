@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, RequestHandler, Response } from 'express';
 import {
     listarClientesService,
     buscarClientePorIdService,
@@ -29,11 +29,12 @@ export async function buscarClientePorIdController(req: Request, res: Response) 
     }
 }
 
-export async function criarClienteController(req: Request, res: Response) {
-    try {
+export const criarClienteController: RequestHandler = async (req, res) => {
+       try {
         const parseResult = clienteSchema.safeParse(req.body);
         if (!parseResult.success) {
-            return res.status(400).json({ error: parseResult.error.errors });
+            res.status(400).json({ error: parseResult.error.errors });
+            return;
         }
         const { nomeCliente, valor, contaCliente } = parseResult.data;
         await criarClienteService(nomeCliente, valor, contaCliente);
@@ -42,13 +43,14 @@ export async function criarClienteController(req: Request, res: Response) {
         console.error(erro);
         res.status(500).json({ error: erro.message || 'Erro ao efetuar transação' });
     }
-}
+};
 
-export async function atualizarClienteController(req: Request, res: Response) {
+export const atualizarClienteController: RequestHandler = async (req, res) => {
     try {
         const parseResult = clienteSchema.safeParse(req.body);
         if (!parseResult.success) {
-            return res.status(400).json({ error: parseResult.error.errors });
+            res.status(400).json({ error: parseResult.error.errors });
+            return;
         }
         const { nomeCliente, valor, contaCliente } = parseResult.data;
         const { id } = req.params;
@@ -58,7 +60,9 @@ export async function atualizarClienteController(req: Request, res: Response) {
         console.error(erro);
         res.status(500).json({ error: 'Erro ao efetuar transação' });
     }
-}
+};
+
+
 
 export async function deletarClienteController(req: Request, res: Response) {
     try {
