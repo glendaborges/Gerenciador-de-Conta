@@ -99,11 +99,11 @@ Remove uma transação por ID.
 ## ✅ To-do (Refatoração para Boas Práticas)
 
 - [x] Separar Frontend e Backend. --João
-- [ ] Implementar **validação de dados** com Zod.
+- [x] Implementar **validação de dados** com Zod.
 - [x] Adotar arquitetura **MVC** (separação de responsabilidades). --Richardy
-- [ ] Criar **middleware de tratamento de erros**.
-- [ ] Usar **dotenv** para variáveis sensíveis.
-- [ ] Padronizar estrutura e formato das **respostas da API**.
-- [ ] Adicionar **testes unitários** com Jest ou Vitest.
+- [x] Criar **middleware de tratamento de erros**.
+- [x] Usar **dotenv** para variáveis sensíveis.
+- [x] Padronizar estrutura e formato das **respostas da API**.
+- [x] Adicionar **testes unitários** com Jest ou Vitest.
 
 ---
