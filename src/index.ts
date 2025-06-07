@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import rotasTransacoes from './routes/clientes.routes';
+import rotasTransacoes from './routes/transaction.routes';
 import './config/conect';
 import { errorHandler } from './middlewares/errorHandler';
 
