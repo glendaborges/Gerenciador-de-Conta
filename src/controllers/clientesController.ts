@@ -6,6 +6,7 @@ import {
     atualizarClienteService,
     deletarClienteService
 } from '../services/clienteService';
+import { clienteSchema } from "../validators/clienteValidator";
 
 export async function listarClientesController(req: Request, res: Response) {
     try {
@@ -30,7 +31,11 @@ export async function buscarClientePorIdController(req: Request, res: Response) 
 
 export async function criarClienteController(req: Request, res: Response) {
     try {
-        const { nomeCliente, valor, contaCliente } = req.body;
+        const parseResult = clienteSchema.safeParse(req.body);
+        if (!parseResult.success) {
+            return res.status(400).json({ error: parseResult.error.errors });
+        }
+        const { nomeCliente, valor, contaCliente } = parseResult.data;
         await criarClienteService(nomeCliente, valor, contaCliente);
         res.json({ status: 'Cliente criado com sucesso' });
     } catch (erro: any) {
@@ -41,8 +46,12 @@ export async function criarClienteController(req: Request, res: Response) {
 
 export async function atualizarClienteController(req: Request, res: Response) {
     try {
+        const parseResult = clienteSchema.safeParse(req.body);
+        if (!parseResult.success) {
+            return res.status(400).json({ error: parseResult.error.errors });
+        }
+        const { nomeCliente, valor, contaCliente } = parseResult.data;
         const { id } = req.params;
-        const { nomeCliente, valor, contaCliente } = req.body;
         await atualizarClienteService(id, nomeCliente, valor, contaCliente);
         res.json({ status: 'Cliente atualizado com sucesso!' });
     } catch (erro) {
